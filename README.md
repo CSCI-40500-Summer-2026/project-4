@@ -1,2 +1,7 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/dYTZVhTy)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=24089010)
+# Project 10
+
+## Product Vision
+
+FOR university students, especially freshmen and transfer students; WHO struggle to find campus information like office locations, deadlines, and procedures that are often found online in different locations, like emails, department pages. THE campus assistant is an AI chatbot THAT delivers fast, accurate, plain-language answers from official campus data and can answer questions like “Where’s the tutoring center?” “When is the tuition deadline?”. UNLIKE university websites, weak search bars, waiting for an answer from a department, or visiting an office, OUR product gives instant, specific answers without students having to dig through multiple websites or wait for an answer from staff.  
+
+More details on the Project: 
