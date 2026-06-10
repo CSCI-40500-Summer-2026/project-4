@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Assistant — Prototype</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>🎓 Campus Assistant</h1>
+        <p class="app__subtitle">
+          Ask about campus locations, deadlines, and how-to questions.
+        </p>
+        <p class="app__badge">
+          Proof-of-concept prototype · answers are hardcoded, not real AI
+        </p>
+      </header>
+
+      <!-- Message history -->
+      <section id="chat" class="chat" aria-live="polite"></section>
+
+      <!-- Suggested-question chips -->
+      <div id="chips" class="chips">
+        <span class="chips__label">Try asking:</span>
+        <button class="chip" type="button">Where is the tutoring center?</button>
+        <button class="chip" type="button">When is tuition due?</button>
+        <button class="chip" type="button">How do I get my student ID?</button>
+        <button class="chip" type="button">When is the last day to drop a class?</button>
+        <button class="chip" type="button">Where is the financial aid office?</button>
+        <button class="chip" type="button">How do I declare a major?</button>
+      </div>
+
+      <!-- Composer -->
+      <form id="composer" class="composer">
+        <input
+          id="input"
+          class="composer__input"
+          type="text"
+          placeholder="Type your question…"
+          autocomplete="off"
+          aria-label="Type your question"
+        />
+        <button class="composer__send" type="submit">Send</button>
+      </form>
+    </main>
+
+    <!-- Load the fake data first, then the app logic. -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
