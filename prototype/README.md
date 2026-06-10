@@ -1,8 +1,8 @@
 # Campus Assistant — Prototype
 
-A single-page proof-of-concept chatbot that answers student questions about campus **locations**, **deadlines**, and **how-to / FAQ procedures** in plain language.
+A single-page proof-of-concept chatbot that answers student questions about campus **locations**, **deadlines**, and **how-to / FAQ procedures** in plain language
 
-> ⚠️ This is a **throwaway skeletal prototype** (Sommerville Ch. 1 style). Its purpose is to demonstrate the concept and help elicit requirements — it is **not** production code and is meant to be discarded.
+> This is a **throwaway skeletal prototype** (Sommerville Ch. 1 style). Its purpose is to demonstrate the concept and help elicit requirements — it is **not** production code and is meant to be discarded.
 
 ## How to run it
 
@@ -32,7 +32,7 @@ _(Replace the placeholders with the actual GitHub account and repository name.)_
   - **Deadlines** — last day to drop, tuition due date, registration opens, FAFSA deadline.
   - **FAQs / procedures** — how to get a student ID, how to declare a major, how to contact an advisor.
 - A **graceful fallback** when it doesn't understand a question (it points you to Student Services instead of guessing).
-- **Stubbed future features**: a "📍 View on map" button on location answers and an "⏰ Remind me" button on deadline answers. These pop up a "coming soon" message to show planned functionality.
+- **Stubbed future features**: a " View on map" button on location answers and an " Remind me" button on deadline answers. These pop up a "coming soon" message to show planned functionality.
 
 ## What is intentionally fake / hardcoded
 
