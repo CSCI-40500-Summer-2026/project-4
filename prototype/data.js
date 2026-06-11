@@ -1,10 +1,7 @@
 /*
  * data.js — the prototype's fake "brain".
  *
- * There is NO real AI here. This is just a hardcoded list of question/answer
- * entries. Each entry has a list of lowercase `keywords`; app.js does simple
- * substring matching of the user's text against these keywords to pick an
- * answer. All facts below are made-up sample data for demo purposes only.
+ * just a hard-coded list of question/answer entries.
  *
  * Categories: "location", "deadline", "faq".
  *   - "location" answers get a stubbed "View on map" button.
@@ -12,9 +9,7 @@
  */
 
 const CAMPUS_DATA = [
-  // ---------------------------------------------------------------------------
-  // LOCATIONS
-  // ---------------------------------------------------------------------------
+//locations
   {
     category: "location",
     keywords: ["tutoring center", "tutoring", "tutor", "study help"],
@@ -52,9 +47,7 @@ const CAMPUS_DATA = [
       "The Student ID Office is in Room 100, Admin Building (inside Student Services).",
   },
 
-  // ---------------------------------------------------------------------------
-  // DEADLINES (sample dates — not real)
-  // ---------------------------------------------------------------------------
+  //deadlines
   {
     category: "deadline",
     keywords: ["last day to drop", "drop a class", "drop deadline", "withdraw"],
@@ -80,9 +73,7 @@ const CAMPUS_DATA = [
       "The FAFSA priority deadline for the 2026–2027 aid year is March 2, 2026.",
   },
 
-  // ---------------------------------------------------------------------------
-  // FAQs / PROCEDURES
-  // ---------------------------------------------------------------------------
+  //FAQs/procedures
   {
     category: "faq",
     keywords: ["how do i get a student id", "get a student id", "new id", "how to get id", "student id"],
@@ -101,10 +92,7 @@ const CAMPUS_DATA = [
     answer:
       "To contact an advisor: open the student portal → Advising → 'Book Appointment', or email your assigned advisor (listed on your portal dashboard).",
   },
-
-  // ---------------------------------------------------------------------------
-  // GENERAL / SMALL TALK (keeps the demo feeling responsive)
-  // ---------------------------------------------------------------------------
+//general
   {
     category: "general",
     keywords: ["hello", "hi", "hey", "good morning", "good afternoon"],
@@ -124,6 +112,6 @@ const CAMPUS_DATA = [
   },
 ];
 
-// The message shown when no keywords match. We never invent an answer.
+// no keywords match
 const FALLBACK_ANSWER =
   "I'm not sure about that yet. Try asking at the Student Services desk (Room 100, Admin Building).";
