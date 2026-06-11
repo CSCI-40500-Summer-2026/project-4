@@ -1,21 +1,15 @@
 /*
  * app.js — Campus Assistant (Proof-of-Concept Prototype)
  *
- * ⚠️ THROWAWAY PROTOTYPE — INTENDED TO BE DISCARDED.
- * This is a skeletal "evolutionary prototype" in the Sommerville Ch.1 sense:
- * its only job is to demonstrate the concept and help elicit requirements.
- * It is NOT production code. There is no real AI, no backend, and no live
- * campus data — answers come from a hardcoded list in data.js matched by
- * simple keyword/substring lookup.
+ * This is a skeletal "evolutionary prototype" 
  */
 
-// --- DOM references ----------------------------------------------------------
 const chatEl = document.getElementById("chat");
 const formEl = document.getElementById("composer");
 const inputEl = document.getElementById("input");
 const chipsEl = document.getElementById("chips");
 
-// --- The fake "matching engine" ---------------------------------------------
+// The fake "matching engine":
 // Lowercase the user's text, then score every entry by how many of its
 // keywords appear as substrings. The highest-scoring entry wins. No match
 // (score 0) means we fall back instead of inventing an answer.
@@ -34,13 +28,12 @@ function findEntry(text) {
   return best; // null if nothing matched
 }
 
-// --- Stubbed "future feature" buttons ---------------------------------------
 // These do nothing real yet — they just show planned functionality.
 function comingSoon(featureName) {
   alert(featureName + " — this feature will be available in a future version.");
 }
 
-// Returns the stub action button(s) appropriate for an answer's category.
+// Returns the stub action button appropriate for an answer's category.
 function actionsFor(category) {
   if (category === "location") {
     return [{ label: "📍 View on map", feature: "View on map" }];
@@ -51,14 +44,14 @@ function actionsFor(category) {
   return [];
 }
 
-// --- Rendering ---------------------------------------------------------------
+// render
 function addMessage(text, sender, actions = []) {
   const msg = document.createElement("div");
-  msg.className = "msg msg--" + sender; // sender: "user" | "bot"
+  msg.className = "msg msg--" + sender;
 
   const bubble = document.createElement("div");
   bubble.className = "bubble";
-  bubble.textContent = text; // textContent = no HTML injection from user input
+  bubble.textContent = text; 
 
   msg.appendChild(bubble);
 
@@ -82,7 +75,7 @@ function addMessage(text, sender, actions = []) {
   chatEl.scrollTop = chatEl.scrollHeight; // keep newest message in view
 }
 
-// --- Conversation flow -------------------------------------------------------
+//conversation flow:
 function handleUserText(text) {
   const trimmed = text.trim();
   if (!trimmed) return;
@@ -100,7 +93,7 @@ function handleUserText(text) {
   }, 250);
 }
 
-// --- Event wiring ------------------------------------------------------------
+// event
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
   handleUserText(inputEl.value);
@@ -115,7 +108,7 @@ chipsEl.addEventListener("click", (e) => {
   handleUserText(chip.textContent);
 });
 
-// --- Greeting on load --------------------------------------------------------
+// greetings
 addMessage(
   "👋 Hi! I'm a prototype Campus Assistant. Ask me about campus locations, deadlines, or how-to questions — or tap a suggestion below.",
   "bot"
