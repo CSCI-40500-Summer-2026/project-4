@@ -1,6 +1,6 @@
 ## Prototype Evolution
 
-This Proof-of-Concept (PoC) builds upon the earlier Prototype Extension by adding more realistic Hunter College functionality. Improvements include:
+This Prototype extension improves upon previous proof-of-concept prototype. Improvements include:
 
 - Expanded Hunter College office and tutoring center information
 - Official website links for campus resources
