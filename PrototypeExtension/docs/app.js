@@ -99,7 +99,7 @@ function handleUserText(text) {
   setTimeout(() => {
     const entry = findEntry(trimmed);
     if (entry) {
-      addMessage(entry.answer, "bot", actionsFor(entry.category), entry.website);
+      addMessage(entry.answer, "bot", entry.website);
     } else {
       addMessage(FALLBACK_ANSWER, "bot");
     }
@@ -126,9 +126,8 @@ clearHistoryEl.addEventListener("click", () => {
   renderHistory();
 });
 
-// greetings
 addMessage(
   "👋 Hi! I'm a Campus Assistant. Ask me about campus locations, deadlines, or how-to questions — or tap a suggestion below.",
-  "bot",
+  "bot"
 );
 inputEl.focus();
