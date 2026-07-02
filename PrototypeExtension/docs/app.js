@@ -32,24 +32,8 @@ function findEntry(text) {
   return best; // null if nothing matched
 }
 
-// These do nothing real yet — they just show planned functionality.
-function comingSoon(featureName) {
-  alert(featureName + " — this feature will be available in a future version.");
-}
-
-// Returns the stub action button appropriate for an answer's category.
-function actionsFor(category) {
-  if (category === "location") {
-    return [{ label: "📍 View on map", feature: "View on map" }];
-  }
-  if (category === "deadline") {
-    return [{ label: "⏰ Remind me", feature: "Remind me" }];
-  }
-  return [];
-}
-
 // render
-function addMessage(text, sender, actions = [], website = null) {
+function addMessage(text, sender, website = null) {
   const msg = document.createElement("div");
   msg.className = "msg msg--" + sender;
 
@@ -67,22 +51,6 @@ function addMessage(text, sender, actions = [], website = null) {
     link.textContent = "Visit official website";
     msg.appendChild(link);
   }
-  // Attach any stubbed feature buttons under the bubble.
-  if (actions.length) {
-    const actionRow = document.createElement("div");
-    actionRow.className = "actions";
-    for (const action of actions) {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "action-btn";
-      btn.textContent = action.label;
-      btn.title = "Coming soon";
-      btn.addEventListener("click", () => comingSoon(action.feature));
-      actionRow.appendChild(btn);
-    }
-    msg.appendChild(actionRow);
-  }
-
   chatEl.appendChild(msg);
   chatEl.scrollTop = chatEl.scrollHeight; // keep newest message in view
 }
