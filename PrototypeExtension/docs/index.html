@@ -19,7 +19,7 @@
       </header>
 
       <section id="chat" class="chat" aria-live="polite"></section>
-      <section class="history">
+      <section class="history" aria-label="Previous questions">
         <div class="history__header">
           <span>Previous Questions</span>
           <button id="clearHistory" class="history__clear" type="button">
@@ -31,7 +31,7 @@
         </div>
       </section>
 
-      <div id="chips" class="chips">
+      <div id="chips" class="chips" role="group" aria-label="Suggested questions">
         <span class="chips__label">Try asking:</span>
         <button class="chip" type="button">
           Where is the tutoring center?
@@ -61,6 +61,7 @@
     </main>
 
     <script src="data.js"></script>
+    <script src="engine.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

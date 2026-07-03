@@ -95,25 +95,6 @@ body {
   border-bottom-left-radius: 4px;
 }
 
-.actions {
-  margin-top: 6px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.action-btn {
-  font-size: 0.78rem;
-  padding: 4px 10px;
-  border: 1px dashed #94a3b8;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #475569;
-  cursor: pointer;
-}
-.action-btn:hover {
-  background: #f8fafc;
-}
-
 .chips {
   padding: 10px 20px;
   border-top: 1px solid #e2e8f0;
@@ -230,4 +211,59 @@ body {
 
 .website-link:hover {
   text-decoration: underline;
+}
+
+/* Clickable URLs rendered inside a message bubble. */
+.inline-link {
+  color: #2563eb;
+  text-decoration: underline;
+  word-break: break-all;
+}
+.msg--user .inline-link {
+  color: #ffffff;
+}
+
+/* 👍 / 👎 answer feedback row. */
+.feedback {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.feedback__label {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+.feedback-btn {
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 3px 7px;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #ffffff;
+  cursor: pointer;
+}
+.feedback-btn:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+.feedback-btn:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+.feedback-btn--chosen {
+  border-color: #2563eb;
+  background: #dbeafe;
+  opacity: 1;
+}
+
+/* Keyboard focus visibility across interactive controls (accessibility). */
+.chip:focus-visible,
+.history-btn:focus-visible,
+.history__clear:focus-visible,
+.feedback-btn:focus-visible,
+.composer__send:focus-visible,
+.website-link:focus-visible,
+.inline-link:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
