@@ -1,11 +1,14 @@
 /*
- * data.js — the prototype's fake "brain".
+ * data.js — the prototype's hard-coded "brain".
  *
- * just a hard-coded list of question/answer entries.
+ * A hand-curated list of question/answer entries grounded in real Hunter
+ * College data. The matching engine (engine.js) scores an entry by how many
+ * of its keywords appear in the user's question.
  *
- * Categories: "location", "deadline", "faq".
- *   - "location" answers get a stubbed "View on map" button.
- *   - "deadline" answers get a stubbed "Remind me" button.
+ * Each entry has: category ("location" | "deadline" | "faq" | "general"),
+ * keywords[], answer (string), and optionally website + structured contact
+ * fields (title/location/phone/email). URLs in answers/fallback are linkified
+ * at render time (app.js). When nothing matches, FALLBACK_ANSWER is shown.
  */
 
 const CAMPUS_DATA = [
@@ -193,8 +196,11 @@ const CAMPUS_DATA = [
   {
     category: "location",
     keywords: ["cs department", "computer science", "comp sci", "cs office"],
+    website: "https://www.hunter.cuny.edu/csci/",
     answer:
-      "The Computer Science Department is on the 3rd floor of the Science Building, Room 300.",
+      "Department of Computer Science\n\n" +
+      "For the department's current office location, hours, and staff, please visit the Computer Science Department website or check the Hunter College campus directory.\n\n" +
+      "The department can also help with questions about CS courses, advising, and major requirements.",
   },
   {
     category: "location",
@@ -322,17 +328,22 @@ const FALLBACK_ANSWER =
   "I'm sorry, I couldn't find information about that office or service.\n\n" +
   "Here are some commonly used Hunter College offices:\n\n" +
   "💰 Bursar's Office (Tuition & Billing)\n" +
-  "Website: [https://www.hunter.cuny.edu/students/tuition-and-payment/office-of-the-bursar/]\n\n" +
+  "https://www.hunter.cuny.edu/students/tuition-and-payment/office-of-the-bursar/\n\n" +
   "🎓 Office of Admissions\n" +
-  "Website: [https://www.hunter.cuny.edu/students/admissions/undergraduate/contact-us/]\n\n" +
+  "https://www.hunter.cuny.edu/students/admissions/undergraduate/contact-us/\n\n" +
   "📄 Office of the Registrar\n" +
-  "Website: [https://www.hunter.cuny.edu/students/registration/office-of-the-registrar/]\n\n" +
+  "https://www.hunter.cuny.edu/students/registration/office-of-the-registrar/\n\n" +
   "💵 Office of Financial Aid\n" +
-  "Website: [https://www.hunter.cuny.edu/students/financial-aid/office-of-financial-aid/]\n\n" +
+  "https://www.hunter.cuny.edu/students/financial-aid/office-of-financial-aid/\n\n" +
   "🧭 Academic Advising\n" +
-  "Website: [https://www.hunter.cuny.edu/students/academic-planning/office-of-advising/K]\n\n" +
+  "https://www.hunter.cuny.edu/students/academic-planning/office-of-advising/\n\n" +
   "💼 Career Center\n" +
-  "Website: [https://www.hunter.cuny.edu/students/career-center/]\n\n" +
+  "https://www.hunter.cuny.edu/students/career-center/\n\n" +
   "♿ Office of AccessABILITY\n" +
-  "Website: [https://www.hunter.cuny.edu/students/health-wellness/accessibility/]\n\n" +
+  "https://www.hunter.cuny.edu/students/health-wellness/accessibility/\n\n" +
   "If you're still unable to find the office you're looking for, please visit the Hunter College website directory or contact the appropriate department directly.";
+
+// Export for Node-based tests; harmless (no-op) in the browser.
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { CAMPUS_DATA, FALLBACK_ANSWER };
+}
