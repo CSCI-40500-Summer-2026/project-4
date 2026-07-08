@@ -22,30 +22,15 @@ Our system implements a robust **4-layer architecture** adapted from the classic
 
 ---
 
-### 3. Layered Architectural Decomposition Diagram
+### 3. Layered Architectural Decomposition Diagram (Figure 4.11)
 Below is the structural breakdown of components communicating across the layered architecture:
-+-----------------------------------------------------------------------+
-| 1. USER INTERFACE (Presentation)                                      |
-|    [ React Chat Widget ]    [ Web Browser UI ]     [ FAQ Dashboard ]  |
-+------------------------------------+----------------------------------+
-                                     | (JSON / HTTP HTTPS)
-                                     v
-+-----------------------------------------------------------------------+
-| 2. APPLICATION SERVICES (AI Orchestration)                            |
-|    [ Intent Router ]    [ LLM Prompt Manager ]    [ Context Injection] |
-+------------------------------------+----------------------------------+
-                                     | (API Queries)
-                                     v
-+-----------------------------------------------------------------------+
-| 3. INTEGRATION SERVICES (Shared Utilities)                           |
-|    [ Response Cache ]     [ Session Handler ]     [ Logger Service ]  |
-+------------------------------------+----------------------------------+
-                                     | (Secure Storage Protocols)
-                                     v
-+-----------------------------------------------------------------------+
-| 4. DATA STORAGE MANAGEMENT (Data Systems)                            |
-|    [ Campus Info DB ]      [ Session Storage ]    [ Vector Index/Docs ]|
-+-----------------------------------------------------------------------+
+
+| Layer | Components & Internal Services | Communication Flow |
+| :--- | :--- | :--- |
+| **1. User Interface** *(Presentation)* | • React Chat Widget<br>• Web Browser UI<br>• FAQ Dashboard | **JSON / HTTP / HTTPS**<br>🔻 *Sends prompt payload* |
+| **2. Application Services** *(AI Orchestration)* | • Intent Router<br>• LLM Prompt Manager<br>• Context Injection | **API Queries**<br>🔻 *Fetches data & system contexts* |
+| **3. Integration Services** *(Shared Utilities)* | • Response Cache<br>• Session Handler<br>• Logger Service | **Secure Storage Protocols**<br>🔻 *Performs CRUD operations* |
+| **4. Data Storage Management** *(Data Systems)* | • Campus Info Database<br>• User Session Storage<br>• Vector Index & Documents | *Persistent Storage Layer* |
 
 ### 4. Technology Choices
 
