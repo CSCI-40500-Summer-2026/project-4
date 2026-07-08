@@ -22,7 +22,7 @@ Our system implements a robust **4-layer architecture** adapted from the classic
 
 ---
 
-### 3. Layered Architectural Decomposition Diagram (Figure 4.11)
+### 3. Layered Architectural Decomposition Diagram 
 Below is the structural breakdown of components communicating across the layered architecture:
 
 | Layer | Components & Internal Services | Communication Flow |
